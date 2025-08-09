@@ -3,7 +3,7 @@
 ## 🙋‍♂️ 自己紹介
 - 名前: Yuichi Shimo
 - 職業: バックエンド寄りのフルスタックエンジニア
-- 住んでいるところ: 福岡
+- 生息地: 福岡
 - 興味: Web開発 / スクレイピング / オープンソース
 
 ---
@@ -29,3 +29,4 @@
 
 ## 📫 連絡先
 - Email: github@shimomo.net
+- Bluesky: [@shimomo.net](https://bsky.app/profile/shimomo.net)
