@@ -29,7 +29,6 @@
 ---
 
 ## 📂 関連リポジトリ
-
 | リポジトリ | 概要 | 技術スタック |
 |---|---|---|
 | 🎨 [narikiri](https://github.com/shimomo/narikiri)<img width=150px> | Stripe の Webhook テストをサポートするためのコマンド | ![go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) ![stripe](https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white) |
@@ -42,9 +41,12 @@
 ---
 
 ## 🏆 GitHub Stats
-![username's GitHub stats](https://github-readme-stats.vercel.app/api?username=shimomo&show_icons=true&theme=radical)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shimomo&layout=compact&theme=radical)
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=shimomo&theme=radical">
+</a>
+<a href="https://github.com/anuraghazra/convoychat">
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=shimomo&theme=radical&layout=compact&langs_count=8&card_width=320">
+</a>
 
 ---
 
