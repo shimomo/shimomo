@@ -27,10 +27,12 @@
 
 | リポジトリ | 概要 | 技術スタック |
 |---|---|---|
-| [narikiri](https://github.com/shimomo/narikiri) | StripeのWebhookテストをサポートするためのコマンド | ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) |
-| [bvp-boatrace-scraper](https://github.com/shimomo/bvp-boatrace-scraper) | ボートレース（競艇）のスクレイピングライブラリ | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) |
-| [boa-motivation-viz](https://github.com/shimomo/boa-motivation-viz) | BoatraceOpenAPI/programsを用いて構築したフロントエンドアプリ | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) <br> ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) <br> ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
-| BoatraceOpenAPI <br> -> [programs](https://github.com/BoatraceOpenAPI/programs) <br> -> [previews](https://github.com/BoatraceOpenAPI/previews) <br> -> [results](https://github.com/BoatraceOpenAPI/results) | bvp-boatrace-scraperを用いて構築した疑似API | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) <br> ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
+| [narikiri](https://github.com/shimomo/narikiri) | Stripe の Webhook テストをサポートするためのコマンド | ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) |
+| [bvp-scraper](https://github.com/shimomo/bvp-scraper) | ボートレースの公式サイトをスクレイピングするためのライブラリ | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) |
+| [bvp-scraper-list](https://github.com/shimomo/bvp-scraper-list) | ボートレースの各開催場の公式サイトをスクレイピングするためのライブラリ集 | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) |
+| [boa-motivation-viz](https://github.com/shimomo/boa-motivation-viz) | BoatraceOpenAPI/programs を用いて構築したフロントエンド | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) <br> ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) <br> ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
+| BoatraceOpenAPI <br> -> [programs](https://github.com/BoatraceOpenAPI/programs) <br> -> [previews](https://github.com/BoatraceOpenAPI/previews) <br> -> [results](https://github.com/BoatraceOpenAPI/results) | bvp-scraper を用いて構築した疑似API | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) <br> ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
+| autorace <br> -> [tokyo-sports-scraper](https://github.com/autorace/tokyo-sports-scraper) | 東京スポーツのオートレース情報をスクレイピングするためのライブラリ | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) |
 
 ---
 
