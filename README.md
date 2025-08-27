@@ -53,11 +53,6 @@
 
 ---
 
-## 📈 Additional Stats
-![streak](https://github-readme-streak-stats.herokuapp.com/?user=shimomo&theme=radical)
-
----
-
 ## 📫 連絡先
 - Email: github@shimomo.net
 - Bluesky: [@shimomo.net](https://bsky.app/profile/shimomo.net)
