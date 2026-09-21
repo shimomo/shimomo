@@ -53,7 +53,6 @@
 | リポジトリ | 技術スタック |
 |---|---|
 | [boatracevibeproject/tenjisagi](https://github.com/boatracevibeproject/tenjisagi)<br>スタート展示と本番の進入コースの食い違い「展示詐欺」を選手ごとに数値化したランキング（[サイト](https://boatracevibeproject.github.io/tenjisagi/)） | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![pages](https://img.shields.io/badge/GitHub_Pages-000000?style=for-the-badge&logo=github&logoColor=white) |
-| [shimomo/boa-motivation-viz](https://github.com/shimomo/boa-motivation-viz)<br>出走表の体重増減から選手のモチベーションを可視化する Web アプリ（[サイト](https://shimomo.github.io/boa-motivation-viz/)） | ![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) ![pages](https://img.shields.io/badge/GitHub_Pages-000000?style=for-the-badge&logo=github&logoColor=white) |
 
 ---
 
