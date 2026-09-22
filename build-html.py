@@ -25,6 +25,7 @@ SITE = {
     "bluesky": "https://bsky.app/profile/shimomo.net",
     "bluesky_label": "@shimomo.net",
     "email": "work@shimomo.net",   # ページ上では JS で組み立てて表示する（収集ボット対策）
+    "title_suffix": "経歴と作ったもの",   # <title> と OGP に使う「名前 | ○○」の ○○
     "description": "Yuichi Shimo（shimomo）の職務経歴。PHP / Laravel を中心とした Web アプリケーションのバックエンド開発、公開 API や OSS パッケージの開発・運用。",
 }
 OMIT_ROWS = {"生年月日", "ポートフォリオ", "氏名", "都道府県", "GitHub"}   # Web には載せない基本情報の行（ヘッダーと重複するもの）
@@ -407,9 +408,9 @@ def build(doc, works=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{inline(name)} | 職務経歴</title>
+<title>{inline(name)} | {inline(SITE["title_suffix"])}</title>
 <meta name="description" content="{html.escape(SITE["description"])}">
-<meta property="og:title" content="{inline(name)} | 職務経歴">
+<meta property="og:title" content="{inline(name)} | {inline(SITE["title_suffix"])}">
 <meta property="og:description" content="{html.escape(SITE["description"])}">
 <meta property="og:type" content="profile">
 {favicon()}
