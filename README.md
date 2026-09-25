@@ -7,7 +7,7 @@
 - 職業: バックエンド寄りのフルスタックエンジニア
 - 生息地: 福岡
 - 興味: Web 開発 / スクレイピング / オープンソース
-- 現在: ボートレース（競艇）のデータ取得ライブラリ群 [`boatrace/*`](https://github.com/shimomo/boatrace) と公開 API を開発中
+- 現在: ボートレース（競艇）のデータ取得ライブラリ群 [`boatrace/*`](https://github.com/shimomo/boatrace)・公開 API と、TypeScript 製のバックテストツール [舟券ラボ](https://github.com/shimomo/funaken-lab) を開発中
 
 ---
 
@@ -22,8 +22,11 @@
 ![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
+![vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 ![vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![react](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-ffd43b?style=for-the-badge&logo=pytest&logoColor=black)
 ![docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
@@ -52,6 +55,7 @@
 ### 📊 データ活用
 | リポジトリ | 技術スタック |
 |---|---|
+| [shimomo/funaken-lab](https://github.com/shimomo/funaken-lab)<br>ボートレースの買い方を実際のレース結果で検証するバックテストの実験室。締切後の情報を読むと型エラーになる設計でリークを防ぎ、特払・不成立・返還を分けて払戻表で決済する（[サイト](https://shimomo.github.io/funaken-lab/)） | ![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![react](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![pages](https://img.shields.io/badge/GitHub_Pages-000000?style=for-the-badge&logo=github&logoColor=white) |
 | [boatracevibeproject/tenjisagi](https://github.com/boatracevibeproject/tenjisagi)<br>スタート展示と本番の進入コースの食い違い「展示詐欺」を選手ごとに数値化したランキング（[サイト](https://boatracevibeproject.github.io/tenjisagi/)） | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![pages](https://img.shields.io/badge/GitHub_Pages-000000?style=for-the-badge&logo=github&logoColor=white) |
 
 ---
