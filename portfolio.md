@@ -26,6 +26,17 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 | リンク | [サイト](https://xn--kck4a5byi2cc.jp/) |
 | タグ | WordPress, PHP, Markdown, さくらのレンタルサーバ |
 
+### 舟券ラボ
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | ボートレースの買い方を、2026 年以降の実際のレース結果で検証するバックテストの Web アプリ。戦略は締切前の情報だけを受け取る型で書くので、結果や確定オッズを読もうとするとコンパイルエラーになります。払戻は特払・不成立・返還を分けて払戻表で決済し、回収率にはレース単位のブートストラップで 95% 区間を付けます。 |
+| 補足 | TypeScript 製の pnpm モノレポ（検証エンジンと React の画面）。データの取得と集計は Web Worker で回し、サーバーを持たずに GitHub Pages で公開しています。外部の JSON は zod で検証し、同着・特払・不成立といった境界ケースは実データから切り出したフィクスチャでテストしています。 |
+| 画像 | ![舟券ラボの検証結果の画面](assets/funaken-lab.png) |
+| リンク | [サイト](https://shimomo.github.io/funaken-lab/) / [GitHub](https://github.com/shimomo/funaken-lab) |
+| バッジ | ![CI](https://img.shields.io/github/actions/workflow/status/shimomo/funaken-lab/ci.yml?branch=main&label=CI) |
+| タグ | TypeScript, React, Vite, Vitest, zod, Biome, Web Worker, GitHub Actions, GitHub Pages |
+
 ## OSS・公開 API
 
 ### boatrace/*
