@@ -4,6 +4,7 @@
 #   ./build.sh html     resume.md + portfolio.md から Web 版（resume.html）を生成
 #   ./build.sh pdf      resume.md から送付用 PDF（resume.pdf）を生成（Windows 側の pwsh + Chrome を利用）
 #   ./build.sh deploy   Web 版と assets/ を shimomo.net（さくら）へ配置し、公開内容を検証
+#   ./build.sh rirekisho  rirekisho.md から履歴書の HTML と PDF（rirekisho.pdf）を生成
 #   ./build.sh all      html → pdf → deploy を順に実行
 #
 # xlsx（update-xlsx.ps1）は Excel が必要なため、このスクリプトでは扱わない。
@@ -16,6 +17,8 @@ REMOTE_DIR="/home/shimomo/www/home"      # shimomo.net のドキュメントル�
 SITE_URL="https://shimomo.net"
 HTML="resume.html"
 PDF="resume.pdf"
+RIREKISHO_HTML="rirekisho.html"
+RIREKISHO_PDF="rirekisho.pdf"
 REDACT="redact.json"
 
 log()  { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
@@ -38,6 +41,30 @@ cmd_pdf() {
     log "PDF: $PDF（${pages} ページ）"
     [ "$pages" -le 4 ] || echo "  注意: 4 ページを超えています。build-pdf.ps1 の font-size を下げると収まります。"
   fi
+}
+
+cmd_rirekisho() {
+  log "履歴書の HTML を生成"
+  python3 build-rirekisho.py
+  log "履歴書の PDF を生成（Windows の Chrome）"
+  local chrome=""
+  for c in "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" "/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe" \
+           "/mnt/c/Program Files/Microsoft/Edge/Application/msedge.exe" "/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"; do
+    [ -x "$c" ] && { chrome="$c"; break; }
+  done
+  [ -n "$chrome" ] || fail "Windows 側に Chrome / Edge が見つかりません"
+  # Chrome は WSL のパスを直接開けないため、Windows の一時フォルダ経由で PDF 化する
+  local wtmp; wtmp="$(wslpath -u "$(cmd.exe /c 'echo %TEMP%' 2>/dev/null | tr -d '\r')")/rirekisho-$$"
+  mkdir -p "$wtmp" && cp "$RIREKISHO_HTML" "$wtmp/rirekisho.html"
+  "$chrome" --headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=5000 \
+    --print-to-pdf="$(wslpath -w "$wtmp/rirekisho.pdf")" "file:///$(wslpath -w "$wtmp/rirekisho.html" | sed 's|\\|/|g')" >/dev/null 2>&1 || true
+  [ -f "$wtmp/rirekisho.pdf" ] || fail "PDF の生成に失敗しました"
+  cp "$wtmp/rirekisho.pdf" "$RIREKISHO_PDF" && rm -rf "$wtmp"
+  if command -v pdfinfo >/dev/null; then
+    log "PDF: $RIREKISHO_PDF（$(pdfinfo "$RIREKISHO_PDF" | awk '/^Pages:/{print $2}') ページ）"
+  fi
+  local todo; todo="$(grep -o '【要記入\|【要確認' "$RIREKISHO_HTML" | wc -l)"
+  [ "$todo" -eq 0 ] || echo "  注意: 未記入・要確認が $todo 件あります。rirekisho.md を埋めてから送付してください。"
 }
 
 cmd_deploy() {
@@ -77,7 +104,8 @@ cmd_deploy() {
 case "${1:-}" in
   html)   cmd_html ;;
   pdf)    cmd_pdf ;;
+  rirekisho) cmd_rirekisho ;;
   deploy) cmd_deploy ;;
   all)    cmd_html; cmd_pdf; cmd_deploy ;;
-  *)      sed -n '2,9p' "$0" | sed 's/^# \{0,1\}//'; exit 1 ;;
+  *)      sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'; exit 1 ;;
 esac
