@@ -2,3 +2,5 @@ resume.*
 redact.json
 # 履歴書（個人情報を含む）とその生成物
 rirekisho.*
+# Python の生成物
+__pycache__/
