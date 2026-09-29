@@ -124,9 +124,10 @@ while ($i -lt $lines.Count) {
 
     if ($lastWasH3) {
       # 案件のメタ情報: 表を1ブロックの帯に圧縮
+      # ラベルは途中で改行させず（CSS の nowrap）、&nbsp; で値の先頭とつないで行末に取り残さない
       $parts = @()
       for ($k = 1; $k -lt $rows.Count; $k++) {
-        $parts += '<b>' + (Esc $rows[$k][0]) + '</b> ' + (Esc $rows[$k][1])
+        $parts += '<b>' + (Esc $rows[$k][0]) + '</b>&nbsp;' + (Esc $rows[$k][1])
       }
       $html.Add('<p class="meta">' + ($parts -join '<span class="sep">｜</span>') + '</p>')
     }
@@ -234,7 +235,7 @@ p.meta {
   font-size: 7.6pt; line-height: 1.5; background: #f7f7f7; border: 1px solid #dcdcdc;
   padding: 1mm 1.6mm; margin: 0 0 1.4mm; text-align: left; break-inside: avoid;
 }
-p.meta b { font-weight: 600; }
+p.meta b { font-weight: 600; white-space: nowrap; }
 p.meta .sep { color: #b0b0b0; margin: 0 1.2mm; }
 
 table {
