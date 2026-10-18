@@ -1,0 +1,14 @@
+# Web 版だけで伏せる表現
+redact.json
+
+# 職務経歴書とその生成物
+resume.*
+
+# 履歴書とその生成物
+rirekisho.*
+
+# Python の生成物
+__pycache__/
+
+# 公開しない資料（企業研究メモなど）
+private/
