@@ -102,6 +102,16 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 | バッジ | ![Packagist](https://img.shields.io/packagist/v/shimomo/autorace-news-collector?label=Packagist) ![PHP](https://img.shields.io/packagist/dependency-v/shimomo/autorace-news-collector/php?label=PHP) |
 | タグ | PHP, PHPUnit, Psalm, Pint, GitHub Actions, Packagist |
 
+### AutoRace News
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | AutoRace News Collector で 1 時間ごとに集めた見出しを、公式のお知らせ・新聞記事・動画の 3 段に分けて、1 日 1 ページで眺めるサイト。GitHub Actions が収集してリポジトリにコミットし、GitHub Pages が配信するので、サーバーもデータベースも使いません。 |
+| 補足 | AUTORACE.JP のサイトポリシーは無断の転載を禁じているため、公開するのは見出しとリンクだけにしています。一部の配信元の取得に失敗しても Actions の実行は失敗にせず、ページ上部の注意と job summary に出します。 |
+| リンク | [サイト](https://shimomo.github.io/autorace-news/) / [GitHub](https://github.com/shimomo/autorace-news) |
+| バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/autorace-news?label=Last%20update) |
+| タグ | PHP, PHPUnit, Psalm, Pint, JavaScript, GitHub Actions, GitHub Pages |
+
 ### Keirin News Collector
 
 | 項目 | 内容 |
@@ -111,6 +121,16 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 | バッジ | ![Packagist](https://img.shields.io/packagist/v/shimomo/keirin-news-collector?label=Packagist) ![PHP](https://img.shields.io/packagist/dependency-v/shimomo/keirin-news-collector/php?label=PHP) |
 | タグ | PHP, PHPUnit, Psalm, Pint, GitHub Actions, Packagist |
 
+### Keirin News
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | Keirin News Collector で 1 時間ごとに集めた見出しを、新聞・メディア、公式・団体、競輪場のお知らせの 3 段に分けて、1 日 1 ページで眺めるサイト。AutoRace News と同じ作りで、選手の話題が多い新聞・メディアを先頭に置いています。 |
+| 補足 | GitHub Actions の IP からの REST API を 403 で拒む 9 か所は RSS に切り替えて読み、ライブラリの WordPress 版と同じ ID を振って結果を揃えています。転載を禁じる配信元があるため、公開するのは見出しとリンクだけです。 |
+| リンク | [サイト](https://shimomo.github.io/keirin-news/) / [GitHub](https://github.com/shimomo/keirin-news) |
+| バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/keirin-news?label=Last%20update) |
+| タグ | PHP, PHPUnit, Psalm, Pint, JavaScript, GitHub Actions, GitHub Pages |
+
 ### SES フィルター
 
 | 項目 | 内容 |
@@ -119,3 +139,33 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 | 補足 | 保存した検索結果と正解ラベルで適合率・再現率を測りながらルールを調整し、ルールを直し終えてから集めた確かめ用のページで 1 回だけ測った数字を README に載せています。unit / e2e / eval の 3 層でテストしています。 |
 | リンク | [GitHub](https://github.com/shimomo/ses-filter) / [記事](https://zenn.dev/shimomo/articles/9f66a551c41f1a) |
 | タグ | TypeScript, WXT, Vitest, Playwright, Chrome 拡張機能 |
+
+### Tech Trends
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | GitHub Trending と Zenn から、Web 系・AI 系で反応が多かったものを毎朝集めて 1 ページにまとめるサイト。前日の記録と比べて、スターやいいねが急に伸びたものと初登場のものに印を付けます。 |
+| 補足 | どちらも非公式のページと API を読むので、構造が変わって収集が失敗したら Actions の実行を赤くし、ページにも注意を出します。取れた分はそのまま表示します。 |
+| リンク | [サイト](https://shimomo.github.io/tech-trends/) / [GitHub](https://github.com/shimomo/tech-trends) |
+| バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/tech-trends?label=Last%20update) |
+| タグ | TypeScript, Vitest, Biome, GitHub Actions, GitHub Pages |
+
+## 検証と記事
+
+### PHP 8.6 clamp() の検証
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | PHP 8.6 で追加される `clamp()` の挙動を、公式 Docker イメージの 8.6.0RC2 で確かめた検証環境と記事。型変換をしないことや、空配列で ValueError になるなど `max(min())` から置き換えると変わる点、自前の `clamp()` がある場合の影響、polyfill との差を確かめました。 |
+| 補足 | すべてのテストを run.sh 1 本で再実行でき、記事に載せた出力はすべて記録したログから写しています。RFC の経緯も、RFC と php-src の PR をたどって年表にしました。 |
+| リンク | [記事](https://zenn.dev/shimomo/articles/8499e432bac303) / [GitHub](https://github.com/shimomo/lab-php86-clamp) |
+| タグ | PHP 8.6, Docker, Shell, Composer |
+
+### laravel/vet の検証
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | Composer の依存の更新を差分と AI エージェントで審査する laravel/vet（v0.2.1）を、手元で配る架空の悪性パッケージで確かめた検証環境と記事。autoload の外だけを変えた版はエージェントに中身が渡らず PASS になるなど、止めるものと止めないものを手順ごとに記録しました。 |
+| 補足 | テスト用の認証局と https サーバーで架空パッケージを配り、スタブのエージェントが受け取ったプロンプトを保存したうえで、本物の Claude Code にもレビューさせて結果を比べています。 |
+| リンク | [記事](https://zenn.dev/shimomo/articles/299809443d5505) / [GitHub](https://github.com/shimomo/lab-laravel-vet) |
+| タグ | PHP, Composer, laravel/vet, Python, Claude Code |
