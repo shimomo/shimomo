@@ -5,7 +5,7 @@
 - 職業: バックエンド寄りのフルスタックエンジニア
 - 生息地: 福岡
 - 興味: Web 開発 / スクレイピング / オープンソース
-- 現在: ボートレース（競艇）の公開 API [boatraceopenapi](https://github.com/boatraceopenapi/api) を中心に、データ取得ライブラリから TypeScript 製のバックテストツール [舟券ラボ](https://github.com/shimomo/funaken-lab) まで、取得・公開・活用の一連を個人で開発中
+- 現在: ボートレース（競艇）の公開 API [Boatrace Open API](https://github.com/boatraceopenapi/api) を中心に、データ取得ライブラリから TypeScript 製のバックテストツール [舟券ラボ](https://github.com/shimomo/funaken-lab) まで、取得・公開・活用の一連を個人で開発中
 
 ---
 
@@ -64,6 +64,7 @@
 | [Handicapper.jp](https://handicapper.jp/)<br>オートレースの出走表・結果・オッズ・選手情報を日次で収集し、走路条件や試走タイムまで掘り下げた分析画面、2005 年以降・約 12.9 万レースの多条件検索、仮想資金の予想シミュレーターを提供する Web サービス。企画から運用まで一人で担当し、シン VPS で稼働中（コードは非公開） | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![laravel](https://img.shields.io/badge/Laravel-F55247?style=for-the-badge&logo=laravel&logoColor=white) ![vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white) ![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
 | [autorace/tokyo-sports-scraper](https://github.com/autorace/tokyo-sports-scraper)<br>東京スポーツのオートレース情報を取得するスクレイピングライブラリ（PyPI: `autorace-tokyo-sports-scraper`） | ![python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![pytest](https://img.shields.io/badge/pytest-ffd43b?style=for-the-badge&logo=pytest&logoColor=black) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
 | [shimomo/autorace-news-collector](https://github.com/shimomo/autorace-news-collector)<br>オートレースの最新記事を AUTORACE.JP・日刊スポーツ・各レース場公式サイト・公式 YouTube のフィードと API から集める `shimomo/autorace-news-collector`。HTML の一覧ページはスクレイピングせず、保存・既読管理・重複排除は呼び出し側に委ねる設計 | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![phpunit](https://img.shields.io/badge/PHPUnit-6C78AF?style=for-the-badge&logo=php&logoColor=white) ![psalm](https://img.shields.io/badge/Psalm-4B5EAA?style=for-the-badge&logo=php&logoColor=white) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
+| ↳ [shimomo/autorace-news](https://github.com/shimomo/autorace-news)<br>上の autorace-news-collector で 1 時間ごとに集めた見出しを、公式のお知らせ・新聞記事・動画の 3 段に分けて 1 日 1 ページで眺めるサイト。転載を禁じる配信元があるため、公開するのは見出しとリンクだけ（[サイト](https://shimomo.github.io/autorace-news/)） | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![phpunit](https://img.shields.io/badge/PHPUnit-6C78AF?style=for-the-badge&logo=php&logoColor=white) ![psalm](https://img.shields.io/badge/Psalm-4B5EAA?style=for-the-badge&logo=php&logoColor=white) ![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![pages](https://img.shields.io/badge/GitHub_Pages-000000?style=for-the-badge&logo=github&logoColor=white) |
 
 ---
 
@@ -71,18 +72,26 @@
 | リポジトリ | 技術スタック |
 |---|---|
 | [shimomo/keirin-news-collector](https://github.com/shimomo/keirin-news-collector)<br>競輪の最新記事を KEIRIN.JP・新聞各紙・JKA 系サイト・競輪場 31 場の公式サイトのフィードと API から集める `shimomo/keirin-news-collector`。autorace-news-collector と同じ設計で、ソースの絞り込みと取得失敗の分離返却に対応 | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![phpunit](https://img.shields.io/badge/PHPUnit-6C78AF?style=for-the-badge&logo=php&logoColor=white) ![psalm](https://img.shields.io/badge/Psalm-4B5EAA?style=for-the-badge&logo=php&logoColor=white) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) |
+| ↳ [shimomo/keirin-news](https://github.com/shimomo/keirin-news)<br>上の keirin-news-collector で 1 時間ごとに集めた見出しを、新聞・メディア、公式・団体、競輪場のお知らせの 3 段に分けて 1 日 1 ページで眺めるサイト。GitHub Actions の IP を 403 で拒む配信元は RSS に切り替えて読む（[サイト](https://shimomo.github.io/keirin-news/)） | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![phpunit](https://img.shields.io/badge/PHPUnit-6C78AF?style=for-the-badge&logo=php&logoColor=white) ![psalm](https://img.shields.io/badge/Psalm-4B5EAA?style=for-the-badge&logo=php&logoColor=white) ![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![pages](https://img.shields.io/badge/GitHub_Pages-000000?style=for-the-badge&logo=github&logoColor=white) |
 
 ---
 
-## 🧰 汎用ライブラリ / ツール
+## 🧰 ツール
 | リポジトリ | 技術スタック |
 |---|---|
 | [shimomo/ses-filter](https://github.com/shimomo/ses-filter)<br>エンジニア求人サイト（paiza転職・Green・doda）の検索結果で、SES・派遣の求人を理由つきで畳む Chrome 拡張機能。保存した検索結果と正解ラベルで適合率・再現率を測りながら判定ルールを調整（[記事](https://zenn.dev/shimomo/articles/9f66a551c41f1a)）| ![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white) |
-| [boatracevibeproject/prefecture](https://github.com/boatracevibeproject/prefecture)<br>都道府県・地方の番号と名称（漢字・ひらがな・カタカナ・英語）を PHP の Enum で相互変換する `bvp/prefecture` | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![phpunit](https://img.shields.io/badge/PHPUnit-6C78AF?style=for-the-badge&logo=php&logoColor=white) |
-| [boatracevibeproject/trimmer](https://github.com/boatracevibeproject/trimmer)<br>ネストした配列の中の文字列まで再帰的に trim する `bvp/trimmer` | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![phpunit](https://img.shields.io/badge/PHPUnit-6C78AF?style=for-the-badge&logo=php&logoColor=white) |
-| [shimomo/laravel-ping](https://github.com/shimomo/laravel-ping)<br>Laravel から任意の URL への応答時間（ms）を計測する `shimomo/laravel-ping` | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![laravel](https://img.shields.io/badge/Laravel-F55247?style=for-the-badge&logo=laravel&logoColor=white) |
+| [shimomo/tech-trends](https://github.com/shimomo/tech-trends)<br>GitHub Trending と Zenn から、Web 系・AI 系で反応が多かったものを毎朝集めて 1 ページにまとめるサイト。前日の記録と比べて、急上昇と初登場に印を付ける（[サイト](https://shimomo.github.io/tech-trends/)） | ![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white) ![actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![pages](https://img.shields.io/badge/GitHub_Pages-000000?style=for-the-badge&logo=github&logoColor=white) |
 | [shimomo/narikiri](https://github.com/shimomo/narikiri)<br>ngrok の起動ごとに変わる URL を Stripe の Webhook エンドポイントへ同期する CLI（Homebrew 対応） | ![go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) ![stripe](https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white) |
-| [shimomo/ibeacon-scanner](https://github.com/shimomo/ibeacon-scanner)<br>Raspberry Pi で iBeacon をスキャンするツール | ![go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) |
+
+---
+
+## 🧪 検証と記事
+新しい機能やツールの挙動を手元の再現環境で確かめ、ログをもとに記事にしたものです。
+
+| リポジトリ | 技術スタック |
+|---|---|
+| [shimomo/lab-php86-clamp](https://github.com/shimomo/lab-php86-clamp)<br>PHP 8.6 で追加される `clamp()` を、公式 Docker イメージの 8.6.0RC2 で確かめた検証環境。型変換をしないことや、空配列で `ValueError` になるなど `max(min())` から置き換えると変わる点、自前の `clamp()` がある場合の影響、polyfill との差を記録（[記事](https://zenn.dev/shimomo/articles/8499e432bac303)） | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) |
+| [shimomo/lab-laravel-vet](https://github.com/shimomo/lab-laravel-vet)<br>Composer の依存の更新を差分と AI エージェントで審査する [laravel/vet](https://github.com/laravel/vet)（v0.2.1）を、手元で配る架空の悪性パッケージで確かめた検証環境。autoload の外だけを変えた版はエージェントに中身が渡らず `PASS` になるなど、止めるものと止めないものを記録（[記事](https://zenn.dev/shimomo/articles/299809443d5505)） | ![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white) ![python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) |
 
 ---
 
