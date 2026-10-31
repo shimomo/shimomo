@@ -44,7 +44,7 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 | 項目 | 内容 |
 | --- | --- |
 | 説明 | ボートレースのデータ取得ライブラリ群。契約（types）・DI コンテナ（core）・汎用モジュール（support）・スクレイパー（scraper / scraper-boatcast）を個別パッケージに分割し、モノレポからリリースして Packagist で公開しています。 |
-| リンク | [GitHub](https://github.com/shimomo/boatrace) / [Packagist](https://packagist.org/packages/boatrace/scraper) |
+| リンク | [GitHub](https://github.com/shimomo/boatrace-php) / [Packagist](https://packagist.org/packages/boatrace/scraper) |
 | バッジ | ![Packagist](https://img.shields.io/packagist/v/boatrace/scraper?label=Packagist) ![PHP](https://img.shields.io/packagist/dependency-v/boatrace/scraper/php?label=PHP) |
 | タグ | PHP, PHPUnit, Psalm, GitHub Actions, Packagist |
 
@@ -74,6 +74,25 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 | リンク | [サイト](https://shimomo.github.io/tenjisagi/) / [GitHub](https://github.com/shimomo/tenjisagi) |
 | バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/tenjisagi/gh-pages?label=Last%20update) |
 | タグ | PHP, GitHub Actions, GitHub Pages |
+
+### Boatrace Motivation Viz
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | 出走表の体重の増減から、選手のモチベーションやコンディションを可視化する Web アプリ。Boatrace Open API のデータを読み、Next.js で静的に書き出して GitHub Pages で配信しています。 |
+| リンク | [サイト](https://shimomo.github.io/boatrace-motivation-viz/) / [GitHub](https://github.com/shimomo/boatrace-motivation-viz) |
+| バッジ | ![CI](https://img.shields.io/github/actions/workflow/status/shimomo/boatrace-motivation-viz/ci.yml?branch=main&label=CI) ![Coverage](https://img.shields.io/codecov/c/github/shimomo/boatrace-motivation-viz?label=Coverage) |
+| タグ | TypeScript, Next.js, React, Tailwind CSS, Jest, Codecov, GitHub Actions, GitHub Pages |
+
+### Boatrace Replay Links
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | 日付・場・レース番号から、BOATCAST のレースリプレイ（2020-01-01 以降）へのリンクを作るページ。映像は埋め込まず、BOATCAST の再生ページを新しいタブで開きます。 |
+| 補足 | リプレイの URL は 1 日 1 ファイルの静的 JSON として毎朝 GitHub Actions で追加し、ページ自身もそれを読んでいます。同じ JSON を API としても公開しています。 |
+| リンク | [サイト](https://shimomo.github.io/boatrace-replay-links/) / [GitHub](https://github.com/shimomo/boatrace-replay-links) |
+| バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/boatrace-replay-links?label=Last%20update) |
+| タグ | JavaScript, Node.js, GitHub Actions, GitHub Pages |
 
 ### Narikiri
 
@@ -106,7 +125,7 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 
 | 項目 | 内容 |
 | --- | --- |
-| 説明 | AutoRace News Collector で 1 時間ごとに集めた見出しを、公式のお知らせ・新聞記事・動画の 3 段に分けて、1 日 1 ページで眺めるサイト。GitHub Actions が収集してリポジトリにコミットし、GitHub Pages が配信するので、サーバーもデータベースも使いません。 |
+| 説明 | AutoRace News Collector で集めた見出しを、公式のお知らせ・新聞記事・動画の 3 段に分けて、1 週間 1 ページで眺めるサイト。GitHub Actions が収集してリポジトリにコミットし、GitHub Pages が配信するので、サーバーもデータベースも使いません。 |
 | 補足 | AUTORACE.JP のサイトポリシーは無断の転載を禁じているため、公開するのは見出しとリンクだけにしています。一部の配信元の取得に失敗しても Actions の実行は失敗にせず、ページ上部の注意と job summary に出します。 |
 | リンク | [サイト](https://shimomo.github.io/autorace-news/) / [GitHub](https://github.com/shimomo/autorace-news) |
 | バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/autorace-news?label=Last%20update) |
@@ -125,19 +144,28 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 
 | 項目 | 内容 |
 | --- | --- |
-| 説明 | Keirin News Collector で 1 時間ごとに集めた見出しを、新聞・メディア、公式・団体、競輪場のお知らせの 3 段に分けて、1 日 1 ページで眺めるサイト。AutoRace News と同じ作りで、選手の話題が多い新聞・メディアを先頭に置いています。 |
+| 説明 | Keirin News Collector で集めた選手ニュース中心の見出しを、新聞・メディア、公式・団体、競輪場のお知らせの 3 段に分けて、1 日 1 ページで眺めるサイト。AutoRace News と同じ作りで、選手の話題が多い新聞・メディアを先頭に置いています。 |
 | 補足 | GitHub Actions の IP からの REST API を 403 で拒む 9 か所は RSS に切り替えて読み、ライブラリの WordPress 版と同じ ID を振って結果を揃えています。転載を禁じる配信元があるため、公開するのは見出しとリンクだけです。 |
 | リンク | [サイト](https://shimomo.github.io/keirin-news/) / [GitHub](https://github.com/shimomo/keirin-news) |
 | バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/keirin-news?label=Last%20update) |
 | タグ | PHP, PHPUnit, Psalm, Pint, JavaScript, GitHub Actions, GitHub Pages |
 
+### WINTICKET Keirin Columns
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | ウィンチケット競輪の出走表で、列の並び替えと表示/非表示を設定できる Chrome 拡張機能（非公式）。PC では横スクロールで隠れがちな「メモ」列を、初期状態で選手名の隣に移します。 |
+| 補足 | 表示済みの表の列を手元のブラウザ内で並べ替えるだけで、WINTICKET への追加のリクエストは送りません。設定は chrome.storage.local にだけ保存し、ビルド不要の 3 ファイルで動きます。 |
+| リンク | [GitHub](https://github.com/shimomo/winticket-keirin-columns) |
+| タグ | JavaScript, Chrome 拡張機能 |
+
 ### SES フィルター
 
 | 項目 | 内容 |
 | --- | --- |
-| 説明 | エンジニア求人サイト（paiza転職・Green・doda）の検索結果で、SES・派遣の求人を理由つきで畳む Chrome 拡張機能。「客先常駐」のような強い言い回しなら畳み、「参画」のような弱い言い回しだけなら要確認の印を付け、「客先常駐なし」「Amazon SES」のような否定や別の意味は数えません。判定はすべてブラウザの中で行い、閲覧内容を外部に送りません。 |
+| 説明 | エンジニア求人サイト（paiza転職・Green・doda・マイナビ転職・リクナビNEXT）の検索結果で、SES・派遣の求人を理由つきで畳む Chrome 拡張機能。「客先常駐」のような強い言い回しなら畳み、「参画」のような弱い言い回しだけなら要確認の印を付け、「客先常駐なし」「Amazon SES」のような否定や別の意味は数えません。判定はすべてブラウザの中で行い、閲覧内容を外部に送りません。 |
 | 補足 | 保存した検索結果と正解ラベルで適合率・再現率を測りながらルールを調整し、ルールを直し終えてから集めた確かめ用のページで 1 回だけ測った数字を README に載せています。unit / e2e / eval の 3 層でテストしています。 |
-| リンク | [GitHub](https://github.com/shimomo/ses-filter) / [記事](https://zenn.dev/shimomo/articles/9f66a551c41f1a) |
+| リンク | [ストア](https://chromewebstore.google.com/detail/pkbihcihgnknmeelpaoaoghggggjehpa) / [GitHub](https://github.com/shimomo/ses-filter) / [記事](https://zenn.dev/shimomo/articles/9f66a551c41f1a) |
 | タグ | TypeScript, WXT, Vitest, Playwright, Chrome 拡張機能 |
 
 ### Tech Trends
@@ -149,6 +177,26 @@ Web 版（shimomo.net）にだけ載せる「作ったもの」の一覧です�
 | リンク | [サイト](https://shimomo.github.io/tech-trends/) / [GitHub](https://github.com/shimomo/tech-trends) |
 | バッジ | ![Last update](https://img.shields.io/github/last-commit/shimomo/tech-trends?label=Last%20update) |
 | タグ | TypeScript, Vitest, Biome, GitHub Actions, GitHub Pages |
+
+### LAPRAS Portfolio
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | LAPRAS の公開 API から、ターミナル風のポートフォリオページを GitHub Pages に毎朝自動で公開する仕組み。フォークして config.json の ID を書き換えるだけで使えます。 |
+| 補足 | 利用者の設定とデータは上流で書き換えないので、こちらの修正は Sync fork でぶつからずに取り込めます。フォーク先では定期実行のワークフローが無効のまま残るため、最初のページができたときに自動で有効にしています。 |
+| リンク | [サイト](https://shimomo.github.io/lapras-portfolio/) / [GitHub](https://github.com/shimomo/lapras-portfolio) |
+| バッジ | ![CI](https://img.shields.io/github/actions/workflow/status/shimomo/lapras-portfolio/ci.yml?branch=main&label=CI) |
+| タグ | TypeScript, Vitest, Playwright, Biome, GitHub Actions, GitHub Pages |
+
+### QuadView
+
+| 項目 | 内容 |
+| --- | --- |
+| 説明 | YouTube の動画やライブを、1 つの画面に最大 4 枠で並べて見るツール。画面の大きさに合わせてスクロールなしで並べ、枠を入れ替えてもほかの枠の映像は止まりません。 |
+| 補足 | 候補の一覧（プリセット）は JSON の URL で足せます。利用者自身の YouTube Data API キーを入れると、チャンネルの今日の配信を探して枠を埋めます。キーと設定はブラウザにだけ保存し、検索結果は 15 分キャッシュしてクォータを節約しています。 |
+| リンク | [サイト](https://shimomo.github.io/quadview/) / [GitHub](https://github.com/shimomo/quadview) |
+| バッジ | ![CI](https://img.shields.io/github/actions/workflow/status/shimomo/quadview/ci.yml?branch=main&label=CI) |
+| タグ | JavaScript, YouTube Data API, GitHub Actions, GitHub Pages |
 
 ## 検証と記事
 
